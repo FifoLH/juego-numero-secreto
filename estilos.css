@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0b132b, #1c2541, #3a506b);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar para el Portafolio */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b132b;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #5bc0be;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5bc0be;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #5bc0be;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1c2541;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Contenedor del Juego */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #1c2541;
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  max-width: 850px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  border: 3px solid transparent;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Clases de Innovación para Adivinado / Perdido */
+.card.ganador {
+  border-color: #2ec4b6;
+  box-shadow: 0 0 25px rgba(46, 196, 182, 0.6);
+}
+
+.card.perdedor {
+  border-color: #e63946;
+  box-shadow: 0 0 25px rgba(230, 57, 70, 0.6);
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card-content h1 {
+  font-size: 2.2rem;
+  color: #ffffff;
+}
+
+.instruccion {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#btnIntentar {
+  background-color: #007bc4;
+  color: white;
+}
+
+#btnIntentar:hover:not(:disabled) {
+  background-color: #005a93;
+}
+
+#btnReiniciar {
+  background-color: #6c757d;
+  color: white;
+}
+
+#btnReiniciar:not(:disabled) {
+  background-color: #2ec4b6;
+}
+
+#btnReiniciar:not(:disabled):hover {
+  background-color: #208b82;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Estilos de mensajes según el estado */
+.mensaje {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 1.5rem;
+}
+
+.mensaje.ganador-texto {
+  color: #2ec4b6; /* Verde si adivina */
+}
+
+.mensaje.perdedor-texto {
+  color: #e63946; /* Rojo si pierde */
+}
+
+.mensaje.pista-texto {
+  color: #ff9f1c; /* Naranja/Amarillo para pistas */
+}
+
+.intentos-info {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+#contador {
+  font-weight: bold;
+  color: #5bc0be;
+}
+
+.card-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.card-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Diseño Responsive para tabletas y celulares */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column-reverse;
+    padding: 1.5rem;
+  }
+
+  .card-content h1 {
+    font-size: 1.8rem;
+  }
+}

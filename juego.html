@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego del Número Secreto</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Contenedor Principal del Juego -->
+  <main class="container">
+    <div class="card" id="tarjetaJuego">
+      <div class="card-content">
+        <h1>Juego del número secreto!</h1>
+        <p class="instruccion">Indica un número del 1 al 10</p>
+        
+        <input type="number" id="valorUsuario" min="1" max="10" placeholder="Ingresa un número">
+        
+        <div class="buttons-container">
+          <button id="btnIntentar" onclick="verificarIntento();">Intentar</button>
+          <button id="btnReiniciar" onclick="reiniciarJuego();" disabled>Nueva Partida</button>
+        </div>
+
+        <!-- Muestra mensajes y contador de intentos restantes -->
+        <p id="mensaje" class="mensaje"></p>
+        <p id="intentosRestantes" class="intentos-info">Intentos restantes: <span id="contador">3</span></p>
+      </div>
+
+      <div class="card-image">
+        <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-mago_114360-1234.jpg" alt="Mago del Número Secreto">
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
