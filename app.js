@@ -44,6 +44,16 @@ function verificarIntento() {
   }
 
   const numeroDeUsuario = parseInt(valorInput);
+
+  // VALIDACIÓN: Si el número es mayor a 10 o menor a 1
+  if (numeroDeUsuario > 10 || numeroDeUsuario < 1) {
+    const mensajeElem = document.getElementById('mensaje');
+    mensajeElem.textContent = 'Ingrese un numero entre 1 y 10';
+    mensajeElem.className = 'mensaje pista-texto';
+    limpiarCaja();
+    return; // Detiene la función sin descontar intentos
+  }
+
   intentos++;
   const intentosRestantes = MAX_INTENTOS - intentos;
 
